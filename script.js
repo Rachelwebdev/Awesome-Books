@@ -1,5 +1,3 @@
-//const title = document.getElementById("title");
-//const author = document.getElementById("author");
 const formBtn = document.querySelector("#form-button");
 const booksList = document.querySelector(".books-list");
 
@@ -45,11 +43,11 @@ books.forEach((book) => {
   booksAdd(book.id, book.title, book.author);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  formBtn.addEventListener('click', (e) => {
+document.addEventListener("DOMContentLoaded", () => {
+  formBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
     addBook(title, author);
   });
 });
