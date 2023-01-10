@@ -44,3 +44,12 @@ if (getBookFromStorage) {
 books.forEach((book) => {
   booksAdd(book.id, book.title, book.author);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  formBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    addBook(title, author);
+  });
+});
