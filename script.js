@@ -26,3 +26,14 @@ const booksAdd = (id, title, author) => {
     li.remove();
   });
 };
+const addBook = (title, author) => {
+  if(title !== "" || author !== ""){
+  const id = Date.now();
+  const bookObj = {id, title, author};
+  books.push(bookObj);
+  localStorage.setItem('books', JSON.stringify(books));
+  document.getElementById('title').value = "";
+  document.getElementById('author').value = "";
+  booksAdd(bookObj.id, bookObj.title, bookObj.author);
+  }
+};
