@@ -27,13 +27,20 @@ const booksAdd = (id, title, author) => {
   });
 };
 const addBook = (title, author) => {
-  if(title !== "" || author !== ""){
-  const id = Date.now();
-  const bookObj = {id, title, author};
-  books.push(bookObj);
-  localStorage.setItem('books', JSON.stringify(books));
-  document.getElementById('title').value = "";
-  document.getElementById('author').value = "";
-  booksAdd(bookObj.id, bookObj.title, bookObj.author);
+  if (title !== "" || author !== "") {
+    const id = Date.now();
+    const bookObj = { id, title, author };
+    books.push(bookObj);
+    localStorage.setItem("books", JSON.stringify(books));
+    document.getElementById("title").value = "";
+    document.getElementById("author").value = "";
+    booksAdd(bookObj.id, bookObj.title, bookObj.author);
   }
 };
+const getBookFromStorage = JSON.parse(localStorage.getItem("books"));
+if (getBookFromStorage) {
+  books = getBookFromStorage;
+}
+books.forEach((book) => {
+  booksAdd(book.id, book.title, book.author);
+});
