@@ -1,7 +1,11 @@
-const title = document.getElementById("title");
-const author = document.getElementById("author");
-const formBtn = document.getElementById("form-button");
+//const title = document.getElementById("title");
+//const author = document.getElementById("author");
+const formBtn = document.querySelector("#form-button");
+const booksList = document.querySelector(".books-list")
 
+let books = [];
+
+/*
 class Node {
   constructor(value, next_node = null) {
     this.value = value;
@@ -22,4 +26,6 @@ class Books {
         }
 
     }
-}
+}*/
+
+
