@@ -10,9 +10,9 @@ class Book {
   }
 
   addBook() {
-    const { title, author } = this;
-    const bookObj = { title, author };
-    if (title !== '' || author !== '') {
+    const { id, title, author } = this;
+    const bookObj = { id, title, author };
+    if (books !== null) {
       books.push(bookObj);
       localStorage.setItem('books', JSON.stringify(books));
       document.getElementById('title').value = '';
@@ -45,7 +45,6 @@ const showBook = (id, title, author) => {
     id = deleteBtn.id;
     book.removeBook();
     li.remove();
-    localStorage.setItem('books', JSON.stringify(books));
   });
 };
 document.addEventListener('DOMContentLoaded', () => {
@@ -53,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
-    const id = Date.now;
+    const id = Date.now();
     const book = new Book(id, title, author);
     book.addBook();
     if (title && author) {
