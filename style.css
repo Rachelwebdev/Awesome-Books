@@ -72,3 +72,12 @@ body {
   font-weight: 600;
   padding: 10px 10px;
 }
+
+@media only screen and (max-width: 768px) {
+  .books-list {
+    width: 95%;
+  }
+  .book-form {
+    width: 65%;
+  }
+}
