@@ -1,6 +1,6 @@
-const formBtn = document.querySelector("#form-button");
-const booksList = document.querySelector(".books-list");
-let books = JSON.parse(localStorage.getItem("books"));
+const formBtn = document.querySelector('#form-button');
+const booksList = document.querySelector('.books-list');
+let books = JSON.parse(localStorage.getItem('books'));
 
 class Book {
   constructor(id, title, author) {
@@ -12,11 +12,11 @@ class Book {
   addBook() {
     const { title, author } = this;
     const bookObj = { title, author };
-    if (title !== "" || author !== "") {
+    if (title !== '' || author !== '') {
       books.push(bookObj);
-      localStorage.setItem("books", JSON.stringify(books));
-      document.getElementById("title").value = "";
-      document.getElementById("author").value = "";
+      localStorage.setItem('books', JSON.stringify(books));
+      document.getElementById('title').value = '';
+      document.getElementById('author').value = '';
     }
   }
 
@@ -28,24 +28,24 @@ class Book {
       }
       return false;
     });
-    localStorage.setItem("books", JSON.stringify(books));
+    localStorage.setItem('books', JSON.stringify(books));
   }
 }
 
 const showBook = (id, title, author) => {
-  const li = document.createElement("li");
+  const li = document.createElement('li');
   li.innerHTML = `<h2>"${title}"</h2>
     <h3> by ${author}</h3>`;
-  const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "Remove";
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Remove';
   li.appendChild(deleteBtn);
   booksList.appendChild(li);
-  deleteBtn.addEventListener("click", () => {
+  deleteBtn.addEventListener('click', () => {
     const book = new Book(id, title, author);
     id = deleteBtn.id;
     book.removeBook();
     li.remove();
-    localStorage.setItem("books", JSON.stringify(books));
+    localStorage.setItem('books', JSON.stringify(books));
   });
 };
 document.addEventListener('DOMContentLoaded', () => {
