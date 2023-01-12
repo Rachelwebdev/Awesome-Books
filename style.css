@@ -8,6 +8,25 @@ body {
   width: 100%;
   background: rgb(237, 237, 237);
 }
+/* Nav menu */
+.header-section {
+  margin: 1rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-menu li {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+/* Booklist main section */
 
 .heading {
   text-align: center;
