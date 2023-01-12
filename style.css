@@ -27,6 +27,14 @@ body {
   cursor: pointer;
 }
 
+.nav-menu a {
+  color: #000;
+}
+.nav-menu a:hover {
+  color: rgb(2, 2, 143);
+  transition: 0.5s ease;
+}
+
 /* Booklist main section */
 
 .heading {
@@ -91,6 +99,37 @@ body {
   border: 3px solid #000;
   font-weight: 600;
   padding: 10px 10px;
+}
+
+.contact {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  height: 80vh;
+  font-size: 25px;
+}
+footer {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: 2rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.footer-text {
+  padding: 1rem;
+}
+
+.hide {
+  display: none;
+}
+.active {
+  display: contents;
 }
 
 @media only screen and (max-width: 768px) {
