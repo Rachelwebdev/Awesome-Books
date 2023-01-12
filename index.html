@@ -12,25 +12,43 @@
       <h2 class="logo">Awesome Books</h2>
       <nav class="nav">
         <ul class="nav-menu">
-          <li id="list">List</li>
-          <li id="add-new">Add new</li>
-          <li id="contact">Contact</li>
+          <li><a href="#" id="books-tab">List</a></li>
+          <li><a href="#" id="addBook-tab">Add new</a></li>
+          <li><a href="#" id="contact-tab">Contact</a></li>
         </ul>
       </nav>
     </header>
-    <h1 class="heading">All Awesome Books</h1>
 
     <div id="new-book">
+      <h1 class="heading">All Awesome Books</h1>
       <ul class="books-list"></ul>
     </div>
 
-    <form class="book-form">
+    <form class="book-form hide" id="addBook-form">
       <h1>Add a new book</h1>
       <input type="text" id="title" placeholder="Title" />
       <input type="text" id="author" placeholder="Author" />
       <button id="form-button" type="submit">Add</button>
     </form>
 
+    <section class="contact hide" id="contact-display">
+      <h1 class="contact-header">Contact information</h1>
+      Do have any questions or you just want to say "Hello"? You can reach out
+      to us!
+      <ul>
+        <li>Our e-mail: mail@mail.com</li>
+        <li>Our phone number: 004358653442</li>
+        <li>Our addrees: Streetname 22, 84503 City, Country</li>
+      </ul>
+    </section>
+
+
+    <footer>
+      <p class="footer-text">Copyright &copy; 2023 | Right reserved |
+        <a href="https://github.com/Rachelwebdev" target="_blank">Rachael</a> & 
+        <a href="https://github.com/Ouail-01" target="_blank">Ouail</a> 
+      </p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
