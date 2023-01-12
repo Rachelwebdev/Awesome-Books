@@ -1,6 +1,6 @@
-const formBtn = document.querySelector("#form-button");
-const booksList = document.querySelector(".books-list");
-let books = JSON.parse(localStorage.getItem("books"));
+const formBtn = document.querySelector('#form-button');
+const booksList = document.querySelector('.books-list');
+let books = JSON.parse(localStorage.getItem('books'));
 
 class Book {
   constructor(id, title, author) {
@@ -14,9 +14,9 @@ class Book {
     const bookObj = { id, title, author };
     if (books !== null) {
       books.push(bookObj);
-      localStorage.setItem("books", JSON.stringify(books));
-      document.getElementById("title").value = "";
-      document.getElementById("author").value = "";
+      localStorage.setItem('books', JSON.stringify(books));
+      document.getElementById('title').value = '';
+      document.getElementById('author').value = '';
     }
   }
 
@@ -28,30 +28,30 @@ class Book {
       }
       return false;
     });
-    localStorage.setItem("books", JSON.stringify(books));
+    localStorage.setItem('books', JSON.stringify(books));
   }
 }
 
 const showBook = (id, title, author) => {
-  const li = document.createElement("li");
+  const li = document.createElement('li');
   li.innerHTML = `<h2>"${title}"</h2>
     <h3> by ${author}</h3>`;
-  const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "Remove";
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Remove';
   li.appendChild(deleteBtn);
   booksList.appendChild(li);
-  deleteBtn.addEventListener("click", () => {
+  deleteBtn.addEventListener('click', () => {
     const book = new Book(id, title, author);
     id = deleteBtn.id;
     book.removeBook();
     li.remove();
   });
 };
-document.addEventListener("DOMContentLoaded", () => {
-  formBtn.addEventListener("click", (e) => {
+document.addEventListener('DOMContentLoaded', () => {
+  formBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    const title = document.getElementById("title").value;
-    const author = document.getElementById("author").value;
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
     const id = Date.now();
     const book = new Book(id, title, author);
     book.addBook();
@@ -66,13 +66,13 @@ if (books !== null) {
   });
 }
 
-const booksTab = document.getElementById("books-tab");
-const addTab = document.getElementById("addBook-tab");
-const contactTab = document.getElementById("contact-tab");
-booksTab.addEventListener("click", () => {
-  document.getElementById("new-book").classList.remove("hide");
-  document.getElementById("addBook-form").classList.add("hide");
-  document.getElementById("contact-display").classList.add("hide");
+const booksTab = document.getElementById('books-tab');
+const addTab = document.getElementById('addBook-tab');
+const contactTab = document.getElementById('contact-tab');
+booksTab.addEventListener('click', () => {
+  document.getElementById('new-book').classList.remove('hide');
+  document.getElementById('addBook-form').classList.add('hide');
+  document.getElementById('contact-display').classList.add('hide');
 });
 
 addTab.addEventListener('click', () => {
